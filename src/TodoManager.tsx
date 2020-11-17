@@ -11,7 +11,7 @@ export type Todo = {
 }
 
 export type RemoveTodo = {
-    (param: Todo): void;
+    (param: string): void;
 }
 
 export type AddTodo = {
@@ -21,9 +21,8 @@ export type AddTodo = {
 const TodoManager: FC = () => {
     const [todoList, setTodoViewer] = useState<Todo[]>([]);
 
-    const removeTodo: RemoveTodo = (target: Todo) => {
-        setTodoViewer(todoList.filter((todo) => todo.id !== target.id));
-        console.log(target.name, ':', target.id , 'is removed');
+    const removeTodo: RemoveTodo = (id: string) => {
+        setTodoViewer(todoList.filter((todo) => todo.id !== id));
     }
 
     const addTodo: AddTodo = (name: string) => {

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ListGroup, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 import { Todo, RemoveTodo } from './TodoManager';
 
@@ -13,7 +13,7 @@ const TodoList: FC<{ todoList: Todo[], removeTodo: RemoveTodo }> = ({ todoList, 
             todoList.map((todo: Todo) => 
                 <li key={todo.id} className='d-flex flex-row justify-cntent-around'>
                     <span className='list-group-item w-100 text-truncate'>{todo.name}</span>
-                    <Button variant='outline-danger' className='text-nowrap' onClick={() => removeTodo(todo)}>削除</Button>
+                    <Button variant='outline-danger' className='text-nowrap' onClick={() => removeTodo(todo.id)}>削除</Button>
                 </li>
             )
         }

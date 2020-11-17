@@ -9,6 +9,9 @@ const App: FC = () => {
             <Route exact path="/">
                 <TodoManager />
             </Route>
+            <Route path="*">
+                <TodoManager />
+            </Route>
         </Switch>
     )
 }
