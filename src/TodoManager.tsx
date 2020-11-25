@@ -51,7 +51,7 @@ const TodoManager: FC = () => {
         <Container fluid='md'>
             <Card className='mx-1 px-2 py-3'>
                 <Card.Body>
-                    <Card.Title className="text-center">
+                    <Card.Title style={{height: '90px'}} className="text-center">
                         Todo App
                         <SigninControl />
                     </Card.Title>
