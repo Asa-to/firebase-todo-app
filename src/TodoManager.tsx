@@ -11,6 +11,7 @@ import uploadTodo from './utils/uploadTodo';
 import deleteTodo from './utils/deleteTodo';
 import SigninControl from './component/SigninControl';
 import { UserContext } from './contexts';
+import { defaultUser } from './models/user';
 
 export type RemoveTodo = {
     (param: string): void;
@@ -52,7 +53,7 @@ const TodoManager: FC = () => {
             <Card className='mx-1 px-2 py-3'>
                 <Card.Body>
                     <Card.Title style={{height: '90px'}} className="text-center">
-                        Todo App
+                        {user === defaultUser ? 'みんなの': `${user}の`}Todo App
                         <SigninControl />
                     </Card.Title>
                     <TodoAdder addTodo={addTodo} />
